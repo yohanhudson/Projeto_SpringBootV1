@@ -6,6 +6,7 @@ import com.example.StefFood.form.AtualizarLoja;
 import com.example.StefFood.form.LojaForm;
 import com.example.StefFood.modelo.Loja;
 import com.example.StefFood.repository.LojaRepository;
+import com.example.StefFood.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,9 @@ public class LojaController {
 
     @Autowired
     private LojaRepository lojaRepository;
+
+    @Autowired
+    private ProdutoRepository produtoRepository;
 
 
     @GetMapping
@@ -59,6 +63,7 @@ public class LojaController {
     @Transactional
     public ResponseEntity<?> remover(@PathVariable Long id) {
         lojaRepository.deleteById(id);
+
 
         return ResponseEntity.ok("Loja deletada com sucesso");
     }

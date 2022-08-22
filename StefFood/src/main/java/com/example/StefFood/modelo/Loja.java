@@ -16,6 +16,7 @@ public class Loja {
     private String endereco;
     private String cnpj;
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "loja_id")
     private List<Produto> produto = new ArrayList<>();
 
 
