@@ -65,6 +65,7 @@ public class ProdutoController {
     @Transactional
     public ResponseEntity<?> remover(@PathVariable Long id) {
         produtoRepository.deleteById(id);
-        return ResponseEntity.ok().build();
+
+        return ResponseEntity.ok("Produto deletado com sucesso");
     }
 }

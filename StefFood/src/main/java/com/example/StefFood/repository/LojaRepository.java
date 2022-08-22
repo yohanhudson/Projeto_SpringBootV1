@@ -8,4 +8,6 @@ import java.util.List;
 public interface LojaRepository extends JpaRepository<Loja, Long> {
 
     Loja findByNome(String nomeLoja);
+
+
 }

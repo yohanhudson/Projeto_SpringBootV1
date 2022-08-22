@@ -3,6 +3,9 @@ package com.example.StefFood.dto;
 
 import com.example.StefFood.modelo.Loja;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class LojaDto {
 
 
@@ -33,5 +36,9 @@ public class LojaDto {
 
     public String getCnpj() {
         return cnpj;
+    }
+
+    public static List<LojaDto> converter(List<Loja> lojas){
+        return lojas.stream().map(LojaDto::new).collect(Collectors.toList());
     }
 }

@@ -1,12 +1,12 @@
 package com.example.StefFood.modelo;
 
 import javax.annotation.processing.Generated;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "loja")
 public class Loja {
 
     @Id
@@ -15,6 +15,19 @@ public class Loja {
     private String nome;
     private String endereco;
     private String cnpj;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Produto> produto = new ArrayList<>();
+
+
+    public Loja() {
+
+    }
+
+    public Loja(String nome, String endereco, String cnpj) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.cnpj = cnpj;
+    }
 
 
     @Override
@@ -72,6 +85,14 @@ public class Loja {
 
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+    }
+
+    public List<Produto> getProduto() {
+        return produto;
+    }
+
+    public void setProduto(List<Produto> produto) {
+        this.produto = produto;
     }
 
 }

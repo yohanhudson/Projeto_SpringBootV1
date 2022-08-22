@@ -1,6 +1,8 @@
 package com.example.StefFood.modelo;
 
 
+import org.hibernate.annotations.SQLDeleteAll;
+
 import javax.persistence.*;
 
 @Entity
