@@ -30,6 +30,12 @@ public class Produto {
         this.loja = loja;
     }
 
+    public Produto(Produto produto) {
+        this.nome = produto.getNome();
+        this.descricao = produto.getDescricao();
+        this.valor = produto.getValor();
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

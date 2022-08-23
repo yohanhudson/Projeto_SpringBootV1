@@ -4,6 +4,7 @@ import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "loja")
@@ -29,6 +30,13 @@ public class Loja {
         this.endereco = endereco;
         this.cnpj = cnpj;
     }
+
+//    public Loja(String nome, String endereco, String cnpj, List<Produto> produto) {
+//        this.nome = nome;
+//        this.endereco = endereco;
+//        this.cnpj = cnpj;
+//        this.produto = produto;
+//    }
 
 
     @Override

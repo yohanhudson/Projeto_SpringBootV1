@@ -6,4 +6,4 @@ INSERT INTO PRODUTO(nome, descricao, valor, loja_id) VALUES('batata', 'vegetal',
 INSERT INTO PRODUTO(nome, descricao, valor, loja_id) VALUES('cove', 'vegetal', '15.00', 2);
 INSERT INTO PRODUTO(nome, descricao, valor, loja_id) VALUES('morango', 'vegetal', '2.00', 1);
 
-INSERT INTO CLIENTE(nome, email, senha) VALUES('yohanhudson', 'yohan.hudson@gmail.com', 'Algoaqui');
+INSERT INTO USUARIO(nome, email, senha) VALUES('yohanhudson', 'yohan.hudson@gmail.com', 'Algoaqui');

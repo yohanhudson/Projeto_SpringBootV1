@@ -1,22 +1,23 @@
 package com.example.StefFood.dto;
 
-import com.example.StefFood.modelo.Cliente;
+
+import com.example.StefFood.modelo.Usuario;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ClienteDto {
+public class UsuarioDto {
 
     private Long id;
     private String nome;
     private String email;
     private String senha;
 
-    public ClienteDto(Cliente cliente) {
-        this.id = cliente.getId();
-        this.nome = cliente.getNome();
-        this.email = cliente.getEmail();
-        this.senha = cliente.getSenha();
+    public UsuarioDto(Usuario usuario) {
+        this.id = usuario.getId();
+        this.nome = usuario.getNome();
+        this.email = usuario.getEmail();
+        this.senha = usuario.getSenha();
     }
 
 
@@ -52,7 +53,7 @@ public class ClienteDto {
         this.senha = senha;
     }
 
-    public static List<ClienteDto> converter(List<Cliente> clientes) {
-        return clientes.stream().map(ClienteDto::new).collect(Collectors.toList());
+    public static List<UsuarioDto> converter(List<Usuario> clientes) {
+        return clientes.stream().map(UsuarioDto::new).collect(Collectors.toList());
     }
 }

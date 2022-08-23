@@ -21,6 +21,8 @@ public class LojaDto {
         this.cnpj = loja.getCnpj();
     }
 
+    public LojaDto(){
+    }
 
     public Long getId() {
         return id;

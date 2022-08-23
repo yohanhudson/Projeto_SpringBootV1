@@ -1,13 +1,14 @@
 package com.example.StefFood.form;
 
 
-import com.example.StefFood.modelo.Cliente;
-import com.example.StefFood.repository.ClienteRepository;
+
+import com.example.StefFood.modelo.Usuario;
+import com.example.StefFood.repository.UsuarioRepository;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 
-public class ClienteForm {
+public class UsuarioForm {
 
     @NotNull @Length(min = 5)
     private String nome;
@@ -41,8 +42,8 @@ public class ClienteForm {
         this.senha = senha;
     }
 
-    public Cliente converter(ClienteRepository clienteRepository) {
-        Cliente cliente = clienteRepository.findByNome(nome);
-        return new Cliente(nome, email, senha);
+    public Usuario converter(UsuarioRepository usuarioRepository) {
+        Usuario usuario = usuarioRepository.findByNome(nome);
+        return new Usuario(nome, email, senha);
     }
 }

@@ -2,9 +2,11 @@ package com.example.StefFood.controller;
 
 
 import com.example.StefFood.dto.LojaDto;
+import com.example.StefFood.dto.LojaProdutoDto;
 import com.example.StefFood.form.AtualizarLoja;
 import com.example.StefFood.form.LojaForm;
 import com.example.StefFood.modelo.Loja;
+import com.example.StefFood.modelo.Produto;
 import com.example.StefFood.repository.LojaRepository;
 import com.example.StefFood.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +51,13 @@ public class LojaController {
         Loja loja = lojaRepository.getOne(id);
 
         return new LojaDto(loja);
+    }
+
+    @GetMapping("/lojaprodutos/{id}")
+    @Transactional
+    public LojaProdutoDto mostrarProdutos(@PathVariable Long id) {
+        Loja loja = lojaRepository.getOne(id);
+        return new LojaProdutoDto(loja);
     }
 
     @PutMapping("/{id}")

@@ -1,9 +1,8 @@
 package com.example.StefFood.form;
 
-import com.example.StefFood.modelo.Cliente;
-import com.example.StefFood.modelo.Loja;
-import com.example.StefFood.repository.ClienteRepository;
-import com.example.StefFood.repository.LojaRepository;
+
+import com.example.StefFood.modelo.Usuario;
+import com.example.StefFood.repository.UsuarioRepository;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
@@ -41,13 +40,13 @@ public class AtualizarCliente {
         this.senha = senha;
     }
 
-    public Cliente atualizar(Long id, ClienteRepository clienteRepository) {
-        Cliente cliente = clienteRepository.getOne(id);
+    public Usuario atualizar(Long id, UsuarioRepository usuarioRepository) {
+        Usuario usuario = usuarioRepository.getOne(id);
 
-        cliente.setNome(this.nome);
-        cliente.setEmail(this.email);
-        cliente.setSenha(this.senha);
+        usuario.setNome(this.nome);
+        usuario.setEmail(this.email);
+        usuario.setSenha(this.senha);
 
-        return cliente;
+        return usuario;
     }
 }
